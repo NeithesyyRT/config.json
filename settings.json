@@ -1,0 +1,100 @@
+{
+    // ========== APARÊNCIA E TEMAS ==========
+    "workbench.colorTheme": "Drakula",          // Tema dark purple baseado no Dracula (extensão Drakula)
+    "workbench.iconTheme": "material-icon-theme", // Ícones do Material Icon Theme
+
+    // ========== GITLENS (Supercharge Git) ==========
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4o", // Use 'copilot:gpt-4o' ou 'copilot:gpt-4.1' se disponível
+    "gitlens.views.commitDetails.files.layout": "tree",
+    "gitlens.blame.highlight.locations": ["gutter"], // ✅ CORRIGIDO: agora é um array
+
+    // ========== ESLint (JavaScript/TypeScript) ==========
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "html"],
+    "eslint.run": "onType",                     // Executa ao digitar
+    "eslint.codeActionsOnSave.mode": "all",     // Corrige tudo ao salvar
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+
+    // ========== PRETTIER (Formatador universal) ==========
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.singleQuote": true,               // Prefere aspas simples
+    "prettier.semi": true,                      // Ponto e vírgula no final
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": false,
+    "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    // ✅ CORRIGIDO: removido o formatador específico para Python (que causava erro).
+    // Agora o Python usará o formatador global Prettier ou nenhum – você pode depois escolher outro.
+
+    // ========== PYTHON + PYLANCE + DEBUGGER + ENVIRONMENT ==========
+    "python.languageServer": "Pylance",         // Pylance como servidor de linguagem
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    // "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python", // ✅ COMENTADO para evitar erro de caminho. Use `Python: Select Interpreter` manualmente.
+    "python.envFile": "${workspaceFolder}/.env", // Suporte a variáveis de ambiente
+    "python.debugger": "debugpy",               // Python Debugger integrado
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+
+    // ========== ERROR LENS (Destaca erros inline) ==========
+    "errorLens.enabled": true,
+    "errorLens.fontSize": "small",
+    "errorLens.messageTemplate": "$message",
+    "errorLens.gutterIconsEnabled": true,
+
+    // ========== LIVE SERVER (Servidor local) ==========
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.fullReload": true,
+
+    // ========== RAINBOW CSV (Destaca arquivos CSV/TSV) ==========
+    "rainbow_csv.enable": true,
+    "rainbow_csv.max_columns": 20,
+    "rainbow_csv.column_highlight_pattern": "rgb(255,200,200)",
+
+    // ========== GEMINI COPILOT (Assistente Google Gemini) ==========
+    "geminiCopilot.model": "gemini-2.0-flash-exp", // Modelo mais recente
+    "geminiCopilot.enableInlineCompletions": true,
+    "geminiCopilot.enableCodeActions": true,
+    // (Não coloque sua chave de API aqui – use variável de ambiente GEMINI_API_KEY)
+
+    // ========== AUTO RENAME TAG (Renomeia tags HTML/JSX juntas) ==========
+    "editor.linkedEditing": true,                // Alternativa nativa; a extensão Auto Rename Tag faz o mesmo
+    "auto-rename-tag.activationOnLanguage": ["html", "xml", "javascriptreact", "typescriptreact"],
+
+    // ========== CODESNAP (Screenshots de código) ==========
+    "codesnap.target": "window",
+    "codesnap.backgroundColor": "#1e1e2e",
+    "codesnap.showWindowControls": false,
+    "codesnap.showLineNumbers": true,
+    "codesnap.shutterAction": "copy",
+
+    // ========== CONTAINER TOOLS (Docker / Dev Containers) ==========
+    "containerTools.defaultComposeFile": "docker-compose.yml",
+    "containerTools.defaultContainerPath": "${workspaceFolder}",
+    "containerTools.showExplorer": true,
+
+    // ========== CONFIGURAÇÕES GLOBAIS ADICIONAIS ==========
+    "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.lineHeight": 24,
+    "editor.renderWhitespace": "all",
+    "workbench.startupEditor": "none",
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.venv": false
+    },
+    "terminal.integrated.fontSize": 13,
+    "extensions.ignoreRecommendations": false
+}
